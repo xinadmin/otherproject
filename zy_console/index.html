@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title>导航页</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+		<link href="css/base.css" rel="stylesheet" />
+		<link rel="stylesheet" type="text/css" href="css/iconfont.css" />
+		<link rel="stylesheet" href="css/newsindex.css" />
+		<link href="css/swiper-3.4.2.min.css" rel="stylesheet" />
+		<link rel="stylesheet" href="css/mui.min.css">
+	</head>
+	<style type="text/css">
+		body {
+			background-color: #f1f1f1;
+		}
+
+		.header_title {
+			width: 100%;
+			overflow: hidden;
+			background-color: #fff;
+			position: fixed;
+			height: 3.0rem;
+			left: 0;
+			top: 0;
+			z-index: 111;
+		}
+
+		.header_title .title {
+			color: #333333;
+			width: 100%;
+			height: 3.0rem;
+			line-height: 3.0rem;
+			font-size: 1.2rem;
+			padding-left: 20px;
+			float: left;
+			
+			
+		}
+
+		.header_title .saoma {
+			border: none;
+			position: absolute;
+			right: 0px;
+			top: 0;
+			height: 100%;
+			color: #333333;
+			font-size: 1.2rem;
+			text-align: right;
+			padding-left: 35px;
+			background: url(img/tubiaozhizuomoban.png) no-repeat left center;
+			background-size: 30px;
+		}
+
+		.swiper-slide {
+			margin-top: 3.0rem;
+		}
+
+		.nav_content {
+
+			width: 100%;
+			overflow: hidden;
+			background-color: #fff;
+			margin: 0 auto;
+		}
+
+		.nav {
+			width: 25%;
+			float: left;
+			overflow: hidden;
+			text-align: center;
+			padding-top: 0.9rem;
+		}
+
+		.nav img {
+			width: 60%;
+
+		}
+
+		.nav:last-child img {
+			margin-top: 0.1rem;
+		}
+
+		.nav span {
+			display: block;
+			width: 100%;
+			color: #343434;
+			font-size: 0.9rem;
+			font-weight: 500;
+			padding: 0.9rem 0;
+			text-align: center;
+		}
+
+		.nav_footer {
+			width: 100%;
+			overflow: hidden;
+			background-color: #fff;
+			border-top: solid 1px rgba(220,220,220,0.5);
+			height: 3.6rem;
+			border-bottom: solid 1px rgba(220,220,220,0.5);
+		}
+
+		.img_nav {
+			display: inline-block;
+			width: 20%;
+			margin: 10px;
+			border-right: solid 1px rgba(220,220,220,0.5);
+			padding-right: 10px;
+		}
+
+		.nav_title {
+			height: 3.4rem;
+			line-height: 3.4rem;
+			font-size: 0.8rem;
+		}
+
+		.more {
+			display: inline-block;
+			line-height: 3.6rem;
+			height: 3.6rem;
+			color: #ff9b02;
+			font-size: 0.9rem;
+			margin-right: 10px;
+		}
+
+		.usertitle {
+			width: 100%;
+			overflow: hidden;
+			background-color: #fff;
+			margin-top: 10px;
+			padding-bottom: 20px;
+		}
+
+		.userh1,
+		.userdiv {
+			width: 94%;
+			box-sizing: border-box;
+			padding-left: 10px;
+			margin: 0 auto;
+		}
+
+		.userh1 {
+			height: 3.0rem;
+			line-height: 3.0rem;
+			font-size: 1.3rem;
+			color: #333333;
+			font-weight: 600;
+			border-bottom: solid 1px rgba(220,220,220,0.5);
+		}
+
+		.userdivtitle {
+			color: #343434;
+			height: 2.8rem;
+			line-height: 2.8rem;
+			font-size: 1.1rem;
+			display: inline-block;
+		}
+
+		.usernum {
+			display: inline-block;
+			height: 3.2rem;
+			line-height: 3.2rem;
+			color: #333333;
+			font-size: 1.4rem;
+		}
+
+		.usernum .userred {
+			color: #fe3430;
+			font-size: 2.3rem;
+			font-weight: 600;
+		}
+
+		.timeuser {
+			display: inline-block;
+			height: 3.2rem;
+			line-height: 3.2rem;
+			color: #333333;
+			font-size: 1.2rem;
+			font-weight: 600;
+			padding-right: 10px;
+		}
+
+		.lookuser {
+			display: inline-block;
+			background-color: #379cff;
+			color: #fff;
+			padding: 10px;
+			border-radius: 20px;
+		}
+	</style>
+	</head>
+
+	<body>
+		<div class="header_title" >
+			<p class="title">嗨，上午好</p>
+			<button class="saoma">扫码</button>
+		</div>
+		 <div class="swiper-container" style="width: 100%;">
+				<div class="swiper-wrapper">
+
+					<div class="swiper-slide"><img src="img/img1.jpg" id="shou_tu"  width="100%"/></div>
+					<div class="swiper-slide"><img src="img/img2.jpg" id="shou_tu"  width="100%"/></div>
+					<div class="swiper-slide"><img src="img/img3.jpg" id="shou_tu"  width="100%"/></div>
+				</div>
+			</div>
+		<nav class="nav_content">
+			<a class="nav">
+				<img src="img/nav1_03.png" />
+				<span>业绩明细</span>
+			</a>
+			<a class="nav" href="userlist.html">
+				<img src="img/nav1_05.png" />
+				<span>会员列表</span>
+			</a>
+			<a class="nav">
+				<img src="img/nav1_07.png" />
+				<span>优惠活动</span>
+			</a>
+			<a class="nav" href="platform.html">
+				<img src="img/nav1_09.png" />
+				<span>行业平台</span>
+			</a>
+
+		</nav>
+		<div class="nav_footer">
+			<img src="img/nav1_16.png" class="img_nav" />
+			<span class="nav_title">众友拼行平台于19.07.01零点停机更新</span>
+			<span class="fr more">更多></span>
+		</div>
+		<ul class="side-nav">
+			<li>
+				<p class="span1">今天收入&nbsp;&nbsp;<s class="night">1500.20</s>&nbsp;&nbsp;元
+					<span class="span2">时间选择：
+						<select name="select" id="presentation" value="1" class="select">
+							<option value="1">周报</option>
+							<option value="2">月报</option>
+							<option value="3">季度</option>
+						</select>
+					</span>
+					<img class="img10" src="img/down.png" id="img_tui">
+				</p>
+				<!-- 柱形图 -->
+				<div id="column" class="column">
+					<div class="chart" id="barChart" style="width: 100%;"></div>
+				</div>
+			</li>
+			<li>
+				<p class="span1">总营业额&nbsp;&nbsp;<s class="night">1520.22</s>&nbsp;&nbsp;元
+					<span class="span2">时间选择：
+						<select id="account_turnover_year" name="select" class="select">
+						</select>
+					</span>
+					<img class="img10" src="img/right.gif" id="img_tui_a"></p>
+				<!-- 折线图1 -->
+				<div id="column_a" class="column">
+					<div class="chart" id="lineChart" style="height: 100%"></div>
+				</div>
+			</li>
+			<script src="js/echarts-all.js"></script>
+			<script type="text/javascript">
+				var getOption = function(chartType) {
+					var chartOption = chartType == 'pie' ? {
+						calculable: false,
+						series: [{
+							name: '访问来源',
+							type: 'pie',
+							radius: '65%',
+							center: ['50%', '50%']
+
+						}]
+					} : {
+
+						grid: {
+							x: 50,
+							x2: 10,
+							y: 15,
+							y2: 25
+						},
+						toolbox: {
+							show: false,
+							feature: {
+								mark: {
+									show: true
+								},
+								dataView: {
+									show: true,
+									readOnly: false
+								},
+								magicType: {
+									show: true,
+									type: ['line', 'bar']
+								},
+								restore: {
+									show: true
+								},
+								saveAsImage: {
+									show: true
+								}
+							}
+						},
+						calculable: false,
+						xAxis: [{
+							type: 'category',
+							data: ['星期1', '星期2', '星期3', '星期4', '星期5', '星期6', '星期日']
+						}],
+						yAxis: [{
+							type: 'value',
+							splitArea: {
+								show: true
+							}
+						}],
+						series: [{
+							name: '蒸发量',
+							type: chartType,
+							// data: IncomeByWeek
+							data: [2.0, 4.9, 7.0, 23.2, 25.6, 76.7, 135.6]
+						}]
+					};
+					return chartOption;
+				};
+				var getOption1 = function(chartType) {
+					var chartOption = {
+
+						grid: {
+							x: 50,
+							x2: 10,
+							y: 15,
+							y2: 25
+						},
+						toolbox: {
+							show: false,
+							feature: {
+								mark: {
+									show: true
+								},
+								dataView: {
+									show: true,
+									readOnly: false
+								},
+								magicType: {
+									show: true,
+									type: ['line', 'bar']
+								},
+								restore: {
+									show: true
+								},
+								saveAsImage: {
+									show: true
+								}
+							}
+						},
+						calculable: false,
+						xAxis: [{
+							type: 'category',
+							data: ['1月', '2月', '3月', '4月', '5月', '6月', '7月', '8月', '9月', '10月 ', '11月', '12月']
+						}],
+						yAxis: [{
+							type: 'value',
+							splitArea: {
+								show: true
+							}
+						}],
+						series: [{
+							name: '蒸发量',
+							type: chartType,
+							// data: Turnoveryear
+							data: [2.0, 4.9, 7.0, 23.2, 25.6, 76.7, 135.6, 15.00, 152.00, 152.00, 152, 00, 15.00]
+						}]
+					};
+					return chartOption;
+				};
+				var byId = function(id) {
+					return document.getElementById(id);
+				};
+				var barChart = echarts.init(byId('barChart'));
+				barChart.setOption(getOption('bar'));
+				var lineChart = echarts.init(byId('lineChart'));
+				lineChart.setOption(getOption1('line'));
+			</script>
+
+		</ul>
+		<script type="text/javascript" src="js/jquery.js"></script>
+		<script type="text/javascript" src="js/swiper.js"></script>
+		<script>
+			//实例化轮播图
+			$(function() {
+				$('#column_a').slideToggle();
+				$('#column_b').slideToggle();
+				$('#img_tui').click(function() {
+					//点击a标签
+					$('#column').slideToggle();
+				})
+				$('#img_tui_a').click(function() { //点击a标签
+					$('#column_a').slideToggle();
+
+				})
+				$('#img_tui_b').click(function() { //点击a标签
+					$('#column_b').slideToggle();
+
+				})
+
+
+				//年份保持最新
+				var date = new Date;
+				var selectedYear = date.getFullYear();
+				var html = "";
+				for (var i = selectedYear; i >= 2016; i--) {
+					html += "<option value='" + i + "' >" + i + "年</option>"
+				}
+				$("#account_turnover_year").append(html);
+				$("#shopTotalyear").append(html);
+			})
+			$("#img_tui").toggle(function() {
+				$(this).attr("src", "img/right.gif");
+			}, function() {
+				$(this).attr("src", "img/down.png ");
+			}).attr("src", "img/down.png ");
+
+			$("#img_tui_a").toggle(function() {
+				$(this).attr("src", "img/down.png");
+			}, function() {
+				$(this).attr("src", "img/right.gif");
+			}).attr("src", "img/right.gif");
+		</script>
+		<div class="usertitle" style="margin-bottom: 55px;">
+			<h1 class="userh1">您的会员</h1>
+			<div class="userdiv">
+				<span class="userdivtitle">今天新增会员</span>
+				<div class="userinner">
+					<span class="usernum"><span class="userred">100</span>位</span>
+					<span class="fr"><span class="timeuser">2019.07.01</span><span class="lookuser">查看明细</span>
+				</div>
+			</div>
+		</div>
+
+		<!-- <nav class="mui-bar-tab" style="position: fixed;left: 0;bottom: 0;background-color: #fff;"> -->
+			<nav class="mui-bar mui-bar-tab" style="box-shadow: none;">
+			<a class="mui-tab-item mui-active" href="index.html">
+				<span class="mui-icon  iconfont icon-shouye-tianchong"></span>
+				<span class="mui-tab-label">首页</span>
+			</a>
+			<a class="mui-tab-item" href="baobiao.html">
+				<span class="mui-icon iconfont  icon-baobiao"></span>
+				<span class="mui-tab-label">报表</span>
+			</a>
+			<a class="mui-tab-item" href="zixun.html">
+				<span class="mui-icon iconfont icon-zixun"></span>
+				<span class="mui-tab-label">资讯</span>
+			</a>
+			<a class="mui-tab-item" href="user.html">
+				<span class="mui-icon  iconfont icon-wodemian"></span>
+				<span class="mui-tab-label">我的</span>
+			</a>
+		</nav> -->
+	</body>
+</html>
+<script>
+	$(".mui-bar-tab").css({
+		"height": "61px",
+		"padding-bottom": "0.9rem"
+	});
+	var isSwiper = false;
+	var myswiper = new Swiper('.swiper-container', {
+		loop: false,
+		pagination: '.swiper-pagination',
+		autoplayDisableOnInteraction: true,
+		autoplay: 2000,
+		onTouchMove: function() {
+			isSwiper = true;
+		},
+		onTransitionEnd: function() {
+			isSwiper = false;
+		}
+	})
+</script>

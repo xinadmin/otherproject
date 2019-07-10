@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+		<link href="css/base.css" rel="stylesheet" />
+		<link rel="stylesheet" href="css/mui.min.css">
+		<link rel="stylesheet" type="text/css" href="css/iconfont.css" />
+		<link href="css/commonheader.css" rel="stylesheet" />
+		<title>报表</title>
+		<style type="text/css">
+			.headerout {
+				width: 100%;
+				margin-top: 3.5rem;
+				height: 9.6rem;
+				background: url(img/table_02.png) no-repeat center center #1197db;
+				background-size: 100%;
+			}
+
+			.tableyuan {
+				float: left;
+				width: 7.5rem;
+				height: 7.5rem;
+				border-radius: 50%;
+				background: url(img/table03.png) repeat 0 0;
+				background-size: 100%;
+				margin: 20px 0 20px 30px;
+			}
+
+			.tabletitle {
+				display: block;
+				width: 100%;
+				color: #fff;
+				text-align: center;
+				padding: 20px 0 10px;
+				font-size: 1.0rem
+			}
+
+			.tablenum {
+				display: block;
+				text-align: center;
+				padding: 10px 0;
+				color: #eafc41;
+				font-size: 1.8rem
+			}
+
+			.moneytable {
+				max-width: 50%;
+				overflow: hidden;
+				padding: 20px 0 10px 20px;
+			}
+
+			.titlemoney {
+				display: inline-block;
+				width: 100%;
+				color: #fff;
+				font-size: 1.1rem;
+			}
+
+			.moneynum {
+				display: inline-block;
+				font-size: 1.3rem;
+				font-weight: 600;
+				color: #fff;
+				padding: 10px 0;
+			}
+
+			.tableout {
+				width: 100%;
+				overflow: hidden;
+				background-color: #fff;
+			}
+
+			.tablediv {
+				width: 92%;
+				margin: 0 auto;
+			}
+
+			.detailtilte {
+				display: inline-block;
+				padding: 12px 0;
+				font-size: 1.4rem;
+				color: #333333;
+				font-weight: 600;
+			}
+
+			.datatitle {
+				display: inline-block;
+				padding: 12px 0 12px 30px;
+				background: url(img/table_05.png) no-repeat left center;
+				background-size: 25px;
+				font-size: 1.1rem;
+			}
+
+			.tableheader {
+				width: 95%;
+				overflow: hidden;
+				margin: 0 auto;
+				background-color: #56eb56;
+				border-radius: 5px;
+			}
+
+			.tableheader>th {
+				font-size: 0.8rem;
+				padding: 10px 0;
+				color: #fff;
+				text-align: center;
+			}
+
+			.tablecontent {
+				width: 95%;
+				overflow: hidden;
+				margin: 0 auto;
+				padding-bottom: 30px;
+			}
+
+			.tablecontent table {
+				width: 100%;
+				overflow: hidden;
+				margin: 0 auto;
+
+			}
+
+			.tablecontent table tr {
+				width: 100%;
+				border-bottom: solid 1px rgba(153, 153, 153, 0.1);
+			}
+
+			.tablecontent table tr td {
+				width: 20%;
+				text-align: center;
+				padding: 6px 0;
+				font-size: 0.9rem;
+			}
+
+			.tablecontent table tr td.orangecolor {
+				color: #feb81d;
+				font-size: 1.2rem;
+				font-weight: 600;
+			}
+
+			.tablecontent table tr td.graycolor {
+				color: #c1c1c1;
+				font-size: 0.8rem;
+			}
+		</style>
+	</head>
+	<body>
+		<header class="header_title">
+			<button class="back" onclick="javascript:history.back(-1);">返回</button>
+			<h1 class="title">报表</h1>
+			<button class="saoma">扫码</button>
+		</header>
+		<div class="headerout">
+			<div class="tableyuan fl">
+				<span class="tabletitle">今天上升</span>
+				<span class="tablenum">50%</span>
+			</div>
+			<div class="fr moneytable">
+				<span class="titlemoney">今天收入</span>
+				<span class="moneynum">19285.00</span>
+				<span class="titlemoney">昨天收入</span>
+				<span class="moneynum">19825.00</span>
+			</div>
+		</div>
+		<div style="width: 100%;height: 3px;background-color: #bfbebe;"></div>
+		<div class="tableout">
+			<div class="tablediv">
+				<span class="detailtilte">收益详细</span><span class="fr datatitle">2017年07月01号 下午 14:20</span>
+			</div>
+		<!-- 	<div class="tableheader">
+				<span>序号</span>
+				<span>会员</span>
+				<span>商家</span>
+				<span>消费金额（元）</span>
+				<span>时间</span>
+			</div> -->
+			<div class="tablecontent">
+				<table>
+					<tr class="tableheader">
+						<th width="12%">序号</th>
+						<th width="20%">会员</th>
+						<th width="20%">商家</th>
+						<th width="28%">消费金额(元)</th>
+						<th width="20%">时间</th>
+					</tr>
+					<tr>
+						<td>1</td>
+						<td>尾号0525</td>
+						<td>一美丽**</td>
+						<td class="orangecolor">152.20</td>
+						<td class="graycolor">2019/05/05下午2:25</td>
+					</tr>
+					<tr>
+						<td>1</td>
+						<td>尾号0525</td>
+						<td>一美丽**</td>
+						<td class="orangecolor">152.20</td>
+						<td class="graycolor">2019/05/05下午2:25</td>
+					</tr>
+					<tr>
+						<td>1</td>
+						<td>尾号0525</td>
+						<td>一美丽**</td>
+						<td class="orangecolor">152.20</td>
+						<td class="graycolor">2019/05/05下午2:25</td>
+					</tr>
+
+				</table>
+			</div>
+		</div>
+		<nav class="mui-bar mui-bar-tab" style="box-shadow: none;">
+			<a class="mui-tab-item " href="index.html">
+				<span class="mui-icon  iconfont icon-shouye-tianchong"></span>
+				<span class="mui-tab-label">首页</span>
+			</a>
+			<a class="mui-tab-item mui-active" href="baobiao.html">
+				<span class="mui-icon iconfont  icon-baobiao"></span>
+				<span class="mui-tab-label">报表</span>
+			</a>
+			<a class="mui-tab-item" href="zixun.html">
+				<span class="mui-icon iconfont icon-zixun"></span>
+				<span class="mui-tab-label">资讯</span>
+			</a>
+			<a class="mui-tab-item " href="user.html">
+				<span class="mui-icon  iconfont icon-wodemian"></span>
+				<span class="mui-tab-label">我的</span>
+			</a>
+		</nav>
+	</body>
+</html>
+<script>
+	$(".mui-bar-tab").css({
+		"height": "61px",
+		"padding-bottom": "0.9rem"
+	});
+</script>

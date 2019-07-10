@@ -1,0 +1,53 @@
+.header_title {
+	width: 100%;
+	overflow: hidden;
+	background-color: #1197db;
+	position: fixed;
+	left: 0;
+	top: 0;
+	height: 3.6rem;
+	z-index: 111;
+	box-sizing: border-box;
+	color: #fff;
+}
+
+.header_title .title {
+	width: 100%;
+	display: inline-block;
+	height: 3.0rem;
+	float: left;
+	line-height: 3.0rem;
+	font-size: 1.3rem;
+	font-weight: 500;
+	box-sizing: border-box;
+	text-align: center;
+}
+
+.back {
+	border: none;
+	position: absolute;
+	left: 0px;
+	top: 0;
+	height: 100%;
+	color: #333333;
+	font-size: 1.2rem;
+	text-align: right;
+	color: #fff;
+	padding-left: 15px;
+	background-color: transparent;
+
+}
+
+.header_title .saoma {
+	border: none;
+	position: absolute;
+	right: 0px;
+	top: 0;
+	height: 100%;
+	font-size: 1.2rem;
+	text-align: right;
+	padding-left: 32px;
+	color: #fff;
+	background: url(../img/saoma.png) no-repeat left center;
+	background-size: 24px;
+}

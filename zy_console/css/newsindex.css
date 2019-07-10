@@ -1,0 +1,133 @@
+.chart {
+	height: 200px;
+	margin: 0px;
+	padding: 0px;
+	width: 100%;
+}
+
+.side-nav li {
+	box-shadow: 0 0 30px rgba(0, 0, 0, 0.2);
+	margin: 0 .4rem 0.6rem .4rem;
+	min-height: 2.2rem;
+	line-height: 2.2rem;
+	position: relative;
+	background: white;
+	width: 95%;
+	margin: .6rem auto;
+	border-radius: 7px;
+}
+
+.side-nav li .span1 {
+	font-size: 0.7rem;
+	padding-right: 1.2rem;
+	padding-left: 0.6rem;
+	height: 2.8rem;
+	line-height: 2.8rem;
+}
+
+.night {
+	font-size: 0.9rem;
+	color: red;
+}
+
+.side-nav li .span2 {
+	font-size: 0.75rem;
+	float: right;
+	margin-right: .5rem;
+	margin-top: .05rem;
+}
+
+.select {
+	background-color: #f3f2f2;
+	border-radius: 12%;
+	font-size: 0.8rem;
+	width: 4.5rem;
+	height: 1.5rem;
+	/* margin-top: 0.5rem; */
+	margin-right: 1.3rem;
+}
+
+.img10 {
+	position: absolute;
+	right: 0.8rem;
+	margin-top: 0.7rem;
+	width: 1.4rem;
+	height: 1.4rem;
+}
+
+.side-nav li a {
+	width: 100%;
+	display: inline-block;
+}
+
+.side-nav li a .images_hede {
+	width: 1.5rem;
+	height: 1.5rem;
+	display: inline-block;
+	margin-left: .5rem;
+}
+
+.side-nav li a span {
+	margin-left: 0.1rem;
+	font-size: 0.8rem;
+}
+
+.side-nav li a .images_tui {
+	width: 0.8rem;
+	height: 1.2rem;
+	display: inline-block;
+	position: absolute;
+	right: 1.2rem;
+	top: 0.45rem;
+}
+
+.column {
+	height: 200px;
+	font-size: 5rem;
+	width: 100%;
+}
+
+#content {
+	width: 100%;
+}
+
+@media screen and (min-width:765px) {
+	.side-nav {
+		margin-top: 15.2rem;
+	}
+
+	.side-nav li {
+		min-height: 3.2rem;
+		line-height: 3.2rem;
+	}
+
+	.side-nav li a .images_hede {
+		width: 1.9rem;
+		height: 1.9rem;
+		display: inline-block;
+		margin-left: 0.8rem;
+	}
+
+	.side-nav li a span {
+		margin-left: 0.3rem;
+		font-size: 0.95rem;
+	}
+
+	.side-nav li a .images_tui {
+		width: 1.2rem;
+		height: 1.6rem;
+		display: inline-block;
+		position: absolute;
+		right: 0.6rem;
+		top: 0.8rem;
+	}
+
+	.swiper-slide {
+		width: 100%;
+		height: auto;
+	}
+
+	#shou_tu {
+		width: 100%;
+		height: 6.6rem;
+	}
