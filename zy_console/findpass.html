@@ -6,7 +6,7 @@
 <link rel="stylesheet" href="css/base.css" />
 <script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
 <script src="js/mui.min.js" type="text/javascript"></script>
-		<link rel="stylesheet" href="css/commonheader.css" />
+<link rel="stylesheet" href="css/commonheader.css" />
 
 <style type="text/css">
 	body {
@@ -16,15 +16,18 @@
 		background-size: 100%;
 		background-origin: border-box;
 	}
-.back {
-	margin-left: 4%;
-	
-}
-.header_title .saoma{
-	margin-right: 6%;
-	background: url(img/back.png) no-repeat left center;
-	background-size: 24px;
+
+	.back {
+		margin-left: 4%;
+
 	}
+
+	.header_title .saoma {
+		margin-right: 6%;
+		background: url(img/back.png) no-repeat left center;
+		background-size: 24px;
+	}
+
 	header.login_form {
 		width: 100%;
 		overflow: hidden;
@@ -84,16 +87,17 @@
 
 	.form_login .form_login_username {
 		background: #fff url(img/login1.png) no-repeat 10px center;
-		background-size: 38px 28px;
+		background-size: 32px 28px;
 	}
-.form_login_code {
+
+	.form_login_code {
 		background: #fff url(img/login2.png) no-repeat 10px center;
-	background-size: 38px 28px;
-}
-	.form_login .form_login_password
-	 {
+		background-size: 32px 28px;
+	}
+
+	.form_login .form_login_password {
 		background: #fff url(img/login3.png) no-repeat 10px center;
-		background-size: 38px 28px;
+		background-size: 32px 28px;
 	}
 
 	.form_login .form_login_username input,
@@ -102,7 +106,7 @@
 		width: 100%;
 		height: 2.9rem;
 		line-height: 2.9rem;
-		font-size: 1.0rem;
+		font-size: 0.9rem;
 		outline: none;
 		color: #666666;
 		-webkit-appearance: none;
@@ -120,7 +124,7 @@
 		width: 46%;
 		height: 2.9rem;
 		line-height: 2.9rem;
-		font-size: 1.0rem;
+		font-size: 0.9rem;
 		border: none;
 	}
 
@@ -152,22 +156,21 @@
 	.form_login .form_login_btn {
 		width: 100%;
 		border-radius: 5px;
-		/* height: 2.3rem; */
 		margin: 2rem 0 0.3rem;
-		
+
 	}
 
 	.form_login .form_login_btn #login_ok {
 		width: 100%;
-		height: 3.3rem;
-		line-height: 3.3rem;
+		height: 3.0rem;
+		line-height: 3.0rem;
 		border-radius: 5px;
 		color: #fff;
-		font-size: 1.2rem;
+		font-size: 1.0rem;
 		text-align: center;
-		background: url(img/login5.png) repeat-x 0 0;
-		background-size: 100%;
+		background-color: #30acff;
 	}
+
 	.methor_login_title {
 		display: inline-block;
 		width: 100%;
@@ -202,7 +205,7 @@
 
 	<!--头部start-->
 	<header class="header_title" style="background-color: rgba(0,0,0,0);top: 2%;">
-		<button class="back" >手机找回密码</button>
+		<button class="back">手机找回密码</button>
 		<button class="saoma" onclick="javascript:history.back(-1);">返回</button>
 	</header>
 	<!--头部end-->
@@ -211,7 +214,7 @@
 		<div class="form_login_username mui-input-row">
 			<input type="text" class="username mui-input-clear" id="username" placeholder="请输入手机号/账号" />
 		</div>
-		
+
 
 		<div class="form_login_code" id="form_login_code">
 			<input type="tel" placeholder="请输入验证码" class="login_code" id="login_code" /><span id="code_take">获取验证码</span>
@@ -220,7 +223,7 @@
 			<input type="password" placeholder="设置新密码" class="login_password mui-input-clear" id="login_password" />
 		</div>
 		<div class="form_login_btn">
-			<button type="button"  id="login_ok" >找回登陆密码</>
+			<button type="button" id="login_ok">找回登陆密码</>
 		</div>
 	</div>
 	<div class="error_bg">
