@@ -1,44 +1,29 @@
 <template>
     <div class="contract-container" >
-        <el-row :gutter="20">
-            <el-col class="flex_center_between" :span="5">
-                <el-input placeholder="请输入内容" maxlength="18" v-model="searchOne" size="small">
-                    <el-select
-                            class="foneSel"
-                            v-model="doctorType"
-                            slot="prepend"
-                            placeholder="请选择"
-                            size="small">
-                        <el-option key="1" label="合同编号" value="1"></el-option>
-                        <el-option key="2" label="合同号" value="2"></el-option>
-                    </el-select>
-                </el-input>
-            </el-col>
-            <el-col class="flex_center_between" :span="5">
-                <span class="select_title">合同状态:</span>
-                <el-select v-model="status" placeholder="请选择状态" size="small">
-                    <el-option label="全部" value=''></el-option>
-                    <el-option label="生效" value='1'></el-option>
-                    <el-option label="到期" value='3'></el-option>
-                    <el-option label="租金递增" value='4'></el-option>
-                    <el-option label="即将到期" value='2'></el-option>
-
+        <el-row :gutter="24">
+            <el-col class="flex_center_between" :span="6">
+                <span class="select_title">贴子类型:</span>
+                <el-select v-model="status" placeholder="请选择类型" size="small">
+                    <el-option label="致富" value='5'></el-option>
+                    <el-option label="情感" value='1'></el-option>
+                    <el-option label="养生" value='3'></el-option>
+                    <el-option label="生活" value='4'></el-option>
+                    <el-option label="科技" value='2'></el-option>
                 </el-select>
             </el-col>
-            <el-col class="flex_center_between" :span="5">
-                <span class="select_title">租赁场地:</span>
-                <el-input placeholder="请输入承租方" v-model="rentalSite" size="small"/>
+            <el-col class="flex_center_between" :span="6">
+                <span class="select_title">标题:</span>
+                <el-input placeholder="请输入标题" v-model="rentalSite" />
             </el-col>
-            <el-col class="flex_center_between" :span="5">
-                <span class="select_title">承租方:</span>
-                <el-input placeholder="请输入承租方" v-model="lessee" size="small"/>
+            <el-col class="flex_center_between" :span="6">
+                <span class="select_title">发布人:</span>
+                <el-input placeholder="请输入发布人" v-model="lessee" />
             </el-col>
-            <el-col class="text_center" :span="4">
-                <el-button type="primary" size="mini" @click="handleSearch">查 询</el-button>
-                <el-button type="text" size="mini" @click="handleReset">重置</el-button>
-            </el-col>
+<!--            <el-col class="text_center" :span="4">-->
+<!--                <el-button type="primary" size="mini" @click="handleSearch">查 询</el-button>-->
+<!--                <el-button type="text" size="mini" @click="handleReset">重置</el-button>-->
+<!--            </el-col>-->
         </el-row>
-        <p class="soon_num"><span class="el-icon-warning"></span>&nbsp;&nbsp;{{ soonOverdue }}份合同即将到期&nbsp;&nbsp;<span @click="coinSelect" class="blue">{{ rentRaise }}</span>份合同即将租金递增</p>
         <div class="create_box">
             <router-link to="/tiezi/Fatie">
             <el-button type="primary" size="mini">发帖</el-button>
@@ -53,7 +38,7 @@
                         <el-checkbox v-model="scope.row.checked" @change="handleChekck(scope.row.id,scope.row.checked)"></el-checkbox>
                     </template>
                 </el-table-column>
-                <el-table-column label="合同状态" prop="status" align="center"    >
+                <el-table-column label="贴子类型" prop="status" align="center"    >
 
                     <template slot-scope="scope">
                         <div v-if="scope.row.status==='即将到期'" class="red">{{ scope.row.status }}</div>
@@ -62,15 +47,13 @@
                     </template>
 
                 </el-table-column>
-                <el-table-column label="合同主体" prop="subject"/>
-                <el-table-column label="合同编号" prop="id" width="130px"/>
-                <el-table-column label="合同号" prop="number"/>
+                <el-table-column label="发布人" prop="subject"/>
+<!--                <el-table-column label="发布人头像" prop="id" width="130px"/>-->
+                <el-table-column label="账户" prop="number"/>
                 <el-table-column label="合同类型" prop="type"/>
                 <el-table-column label="承租方" prop="lessee"/>
                 <el-table-column label="承租方联系电话" prop="lesseeMobile" width="110px"/>
-                <el-table-column label="签约代表" prop="signPerson"/>
-                <el-table-column label="租赁场地" prop="rentalSite"/>
-                <el-table-column label="合同签订日期" prop="signCreateTime" width="100px">
+                <el-table-column label="发布时间" prop="signCreateTime" width="100px">
                     <template slot-scope="scope">
                         {{ scope.row.signCreateTime | formatDate1 }}
                     </template>
@@ -85,46 +68,9 @@
                         {{ scope.row.endTime | formatDate1 }}
                     </template>
                 </el-table-column>
-                <el-table-column label="月租金额" prop="monthlyRent"/>
-
-                <el-table-column label="保证金" prop="deposit"/>
-                <el-table-column label="共摊费" prop="sharingFee"/>
-                <el-table-column label="负责人" prop="createPerson"/>
-                <el-table-column label="租金递增时间" prop="rentRaiseTime" width="100px">
-                    <template slot-scope="scope">
-                        {{ scope.row.rentRaiseTime | formatDate1 }}
-                    </template>
-                </el-table-column>
-                <el-table-column label="终止合同时间" prop="stopTime" width="100px">
-                    <template slot-scope="scope">
-                        {{ scope.row.stopTime | formatDate1 }}
-                    </template>
-                </el-table-column>
-                <el-table-column label="搬出场地时间" prop="moveOutTime" width="100px">
-                    <template slot-scope="scope">
-                        {{ scope.row.moveOutTime | formatDate1 }}
-                    </template>
-                </el-table-column>
                 <el-table-column label="是否结清租金余款" prop="isSettleBalance" width="100px">
                     <template slot-scope="scope">
                         {{ scope.row.isSettleBalance=='1'?'是':'否' }}
-                    </template>
-                </el-table-column>
-                <el-table-column label="是否退保证金" prop="isReturnDeposit" width="100px">
-                    <template slot-scope="scope">
-                        {{ scope.row.isReturnDeposit=='1'?'是':'否' }}
-                    </template>
-                </el-table-column>
-                <el-table-column label="创建人" prop="createName"/>
-                <el-table-column label="创建时间" prop="createTime" width="90px">
-                    <template slot-scope="scope">
-                        {{ scope.row.createTime | formatDate }}
-                    </template>
-                </el-table-column>
-                <el-table-column label="更新人" prop="updateName" width="100px"></el-table-column>
-                <el-table-column label="更新时间" prop="updateTime" width="100px">
-                    <template slot-scope="scope">
-                        {{ scope.row.updateTime | formatDate }}
                     </template>
                 </el-table-column>
                 <el-table-column fixed="right" width="100px" align="center" label="操作">
@@ -423,7 +369,7 @@
             },
             // 创建
             toCreate(){
-                this.$router.push({name:'fatie',query:{'type':1}})
+                this.$router.push({name:'/tiezi/Fatie',query:{'type':1}})
             },
             // 编辑
             toEdit(val){
@@ -495,7 +441,7 @@
         background: #fff;
         .select_title{
             display: inline-block;
-            width:80px;
+            width:70px;
             font-size: 14px;
             color:#909399;
         }
