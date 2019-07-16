@@ -54,7 +54,47 @@ export const constantRoutes = [
       meta: { title: 'Dashboard', icon: 'dashboard' }
     }]
   },
+  {
+    path: '/tiezi',
+    component: Layout,
+    redirect: '/tiezi/tiezi',
+    name: '贴子管理',
+    meta: { title: '贴子', icon: 'email' },
+    alwaysShow: true,
+    children: [
+      {
+        path: 'tiezi',
+        name: 'Tiezi',
+        component: () => import('@/views/tiezi/index'),
+        meta: { title: '发帖', icon: 'email' },
+        affix: true
+      },
+      {
+        path: 'checktiezi',
+        name: 'Checktiezi',
+        component: () => import('@/views/tiezi/checktiezi'),
+        meta: { title: '审核贴子', icon: 'email' },
+        affix: true
 
+      },
+      {
+        path: 'dingtiezi',
+        name: 'Dingtiezi',
+        component: () => import('@/views/tiezi/dingtiezi'),
+        meta: { title: '置顶贴子', icon: 'email' },
+        affix: true,
+        hidden:true
+      },
+      {
+        path: 'refreshtiezi',
+        name: 'Refreshtiezi',
+        component: () => import('@/views/tiezi/refreshtiezi'),
+        meta: { title: '刷新贴子', icon: 'email' },
+        affix: true,
+        hidden:true
+      }
+    ]
+  },
   {
     path: '/example',
     component: Layout,
@@ -66,13 +106,13 @@ export const constantRoutes = [
         path: 'table',
         name: 'Table',
         component: () => import('@/views/table/index'),
-        meta: { title: 'Table', icon: 'table' }
+        meta: { title: 'Table', icon: 'email' }
       },
       {
         path: 'tree',
         name: 'Tree',
         component: () => import('@/views/tree/index'),
-        meta: { title: 'Tree', icon: 'tree' }
+        meta: { title: 'Tree', icon: 'email' }
       }
     ]
   },
