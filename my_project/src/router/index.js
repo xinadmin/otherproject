@@ -59,29 +59,38 @@ export const constantRoutes = [
     component: Layout,
     redirect: '/tiezi/tiezi',
     name: '贴子管理',
-    meta: { title: '贴子', icon: 'email' },
+    meta: { title: '贴子', icon: 'shenhe' },
     alwaysShow: true,
     children: [
       {
         path: 'tiezi',
         name: 'Tiezi',
         component: () => import('@/views/tiezi/index'),
-        meta: { title: '发帖', icon: 'email' },
+        meta: { title: '帖子列表', icon: 'nested' },
         affix: true
       },
       {
         path: 'checktiezi',
         name: 'Checktiezi',
         component: () => import('@/views/tiezi/checktiezi'),
-        meta: { title: '审核贴子', icon: 'email' },
+        meta: { title: '审核贴子', icon: 'shenhe' },
         affix: true
 
       },
+        {
+            path: 'fatie',
+            name: 'Fatie',
+            component: () => import('@/views/tiezi/fatie'),
+            meta: { title: '发贴', icon: 'send' },
+            affix: true,
+            hidden:true
+
+        },
       {
         path: 'dingtiezi',
         name: 'Dingtiezi',
         component: () => import('@/views/tiezi/dingtiezi'),
-        meta: { title: '置顶贴子', icon: 'email' },
+        meta: { title: '置顶贴子', icon: 'zhiding' },
         affix: true,
         hidden:true
       },
@@ -89,9 +98,38 @@ export const constantRoutes = [
         path: 'refreshtiezi',
         name: 'Refreshtiezi',
         component: () => import('@/views/tiezi/refreshtiezi'),
-        meta: { title: '刷新贴子', icon: 'email' },
+        meta: { title: '刷新贴子', icon: 'shuaxin' },
         affix: true,
         hidden:true
+      }
+    ]
+  },
+    {
+    path: '/user',
+    component: Layout,
+    redirect: '/user/index',
+    name: '会员管理',
+    meta: { title: '会员管理', icon: 'huiyuan21' },
+    children: [
+      {
+        path: 'index',
+        name: 'index',
+        component: () => import('@/views/user/index'),
+        meta: { title: '会员列表', icon: 'table' }
+
+      },
+      {
+        path: 'usermessage',
+        name: 'Usermessage',
+        // component: () => import('@/views/user/usermessage'),
+        meta: { title: '会员资料', icon: '' },
+        hidden:true
+      },
+      {
+        path: 'vipuser',
+        name: 'Vipuser',
+        component: () => import('@/views/user/vipuser'),
+        meta: { title: 'vip会员', icon: 'huiyuan1' }
       }
     ]
   },
@@ -102,7 +140,25 @@ export const constantRoutes = [
     name: 'Example',
     meta: { title: 'Example', icon: 'example' },
     children: [
-      {
+        {
+            path: 'ActingMemberM',
+            name: 'ActingMemberM',
+            component: () => import('@/views/table/ActingMemberM'),
+            meta: { title: 'Table', icon: 'email' }
+        },
+        {
+            path: 'Checkout',
+            name: 'Checkout',
+            component: () => import('@/views/table/Checkout'),
+            meta: { title: 'Table', icon: 'email' }
+        },
+        {
+            path: 'commissions',
+            name: 'Commissions',
+            component: () => import('@/views/table/commissions'),
+            meta: { title: 'Table', icon: 'email' }
+        },
+        {
         path: 'table',
         name: 'Table',
         component: () => import('@/views/table/index'),

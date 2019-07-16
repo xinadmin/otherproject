@@ -7,23 +7,16 @@
     <div class="right-menu">
       <el-dropdown class="avatar-container" trigger="click">
         <div class="avatar-wrapper">
-          <img :src="avatar+'?imageView2/1/w/80/h/80'" class="user-avatar">
+          <img :src="logo" class="user-avatar">
           <i class="el-icon-caret-bottom" />
         </div>
         <el-dropdown-menu slot="dropdown" class="user-dropdown">
-          <router-link to="/">
-            <el-dropdown-item>
-              Home
-            </el-dropdown-item>
+          <router-link class="inlineBlock" to="/">
+            <el-dropdown-item>首页</el-dropdown-item>
           </router-link>
-          <a target="_blank" href="https://github.com/PanJiaChen/vue-admin-template/">
-            <el-dropdown-item>Github</el-dropdown-item>
-          </a>
-          <a target="_blank" href="https://panjiachen.github.io/vue-element-admin-site/#/">
-            <el-dropdown-item>Docs</el-dropdown-item>
-          </a>
+          <el-dropdown-item>{{ loginName }}</el-dropdown-item>
           <el-dropdown-item divided>
-            <span style="display:block;" @click="logout">Log Out</span>
+            <span style="display:block;" @click="logout">退出登录</span>
           </el-dropdown-item>
         </el-dropdown-menu>
       </el-dropdown>
@@ -35,11 +28,19 @@
 import { mapGetters } from 'vuex'
 import Breadcrumb from '@/components/Breadcrumb'
 import Hamburger from '@/components/Hamburger'
+import logo from "@/assets/avatar_default.png"
+import { removeToken } from '@/utils/auth'
 
 export default {
   components: {
     Breadcrumb,
     Hamburger
+  },
+  data(){
+    return {
+      logo:logo,
+      loginName:sessionStorage.getItem('token')
+    }
   },
   computed: {
     ...mapGetters([
@@ -52,8 +53,22 @@ export default {
       this.$store.dispatch('app/toggleSideBar')
     },
     async logout() {
-      await this.$store.dispatch('user/logout')
-      this.$router.push(`/login?redirect=${this.$route.fullPath}`)
+      // removeToken()
+      // await this.$store.dispatch('user/logout')
+      // this.$router.push(`/login?redirect=${this.$route.fullPath}`)
+      this.$confirm("确定退出登录？", "提示", {
+        confirmButtonText: "确定",
+        cancelButtonText: "取消",
+        type: "warning"
+      }).then(()=>{
+        // controller.logout().then(res => {
+          removeToken()
+          this.$message.success('退出登录成功')
+          setTimeout(() => { location.reload() },1000)// 为了重新实例化vue-router对象 避免bug
+        // }).catch(err => {
+        //   this.$message.error("后台服务错误");
+        // })
+      }).catch(() => {});
     }
   }
 }

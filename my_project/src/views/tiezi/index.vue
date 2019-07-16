@@ -40,7 +40,9 @@
         </el-row>
         <p class="soon_num"><span class="el-icon-warning"></span>&nbsp;&nbsp;{{ soonOverdue }}份合同即将到期&nbsp;&nbsp;<span @click="coinSelect" class="blue">{{ rentRaise }}</span>份合同即将租金递增</p>
         <div class="create_box">
-            <el-button type="primary" size="mini" @click="toCreate">创建</el-button>
+            <router-link to="/tiezi/Fatie">
+            <el-button type="primary" size="mini">发帖</el-button>
+            </router-link>
             <el-button type="primary" size="mini" @click="handleDelete">删除</el-button>
             <el-button type="primary" size="mini" @click="handleExport">导出</el-button>
         </div>
@@ -145,68 +147,10 @@
                     :total="total"
             ></el-pagination>
         </section>
-
-        <div class="pre-container">
-            <el-dialog custom-class="sign_popover" title="即将到期，租金递增提示" :before-close="handleClose" :visible.sync="dialogShowPop" width="52%" top="30px" >
-                <div>
-                    <section>
-                        <el-table :data="contractListCoin" :stripe="true" size="small" border>
-                            <el-table-column label="序号" type="index" width="70px" align="center"/>
-                            <el-table-column label="合同状态" prop="status" align="center" width="80px"/>
-                            <el-table-column label="合同号" prop="number" width="140px" align="center"/>
-                            <el-table-column label="承租方" prop="lessee" width="100px" align="center"/>
-                            <el-table-column label="租赁场地" prop="rentalSite" align="center"/>
-                            <el-table-column label="合同开始时间" prop="startTime" width="100px" align="center">
-                                <template slot-scope="scope">
-                                    {{ scope.row.startTime | formatDate1 }}
-                                </template>
-                            </el-table-column >
-                            <el-table-column label="合同结束时间" prop="endTime" width="100px" align="center">
-                                <template slot-scope="scope">
-                                    {{ scope.row.endTime | formatDate1 }}
-                                </template>
-                            </el-table-column >
-                            <el-table-column label="租金递增时间" prop="rentRaiseTime" width="100px" align="center">
-                                <template slot-scope="scope">
-                                    {{ scope.row.rentRaiseTime | formatDate1 }}
-                                </template>
-                            </el-table-column >
-                        </el-table>
-                    </section>
-                    <section class="text_right" style="margin-top: 10px">
-                        <el-pagination
-                                @size-change="handleSizeChangeDig"
-                                @current-change="handleCurrentChangeDig"
-                                :current-page.sync="searchForms.pageNum"
-                                :page-sizes="[10, 20, 50, 100,200]"
-                                :page-size="searchForms.pageSize"
-                                layout="total,sizes, prev, pager, next"
-                                :total="totalCoin"
-                        ></el-pagination>
-                    </section>
-                    <el-row class="text_center" style="margin-top: 10px;border-top: solid 1px #ddd;padding-top: 5px">
-                        <el-button type="primary" @click="closeDialogs">立即处理</el-button>
-                        <el-button @click="dialogVisibless" >暂不处理</el-button>
-                    </el-row>
-                </div>
-            </el-dialog>
-        </div>
-        <el-dialog
-                title="暂不处理"
-                :visible.sync="dialogVisible"
-                width="30%"
-        >
-            <span>确定暂不处理吗？</span>
-            <span slot="footer" class="dialog-footer">
-    <el-button @click="dialogVisible= false">取 消</el-button>
-    <el-button type="primary"  @click="noTipsDay" >确 定</el-button>
-  </span>
-        </el-dialog>
     </div>
 </template>
 
 <script>
-    // import controller from "@/controllers/contractcontrollers";
     import { formatDate } from "@/utils/filters";
 
     export default {
@@ -479,7 +423,7 @@
             },
             // 创建
             toCreate(){
-                this.$router.push({name:'Create',query:{'type':1}})
+                this.$router.push({name:'fatie',query:{'type':1}})
             },
             // 编辑
             toEdit(val){

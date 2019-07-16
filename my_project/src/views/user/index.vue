@@ -9,23 +9,15 @@
 </template>
 
 <script>
-    import { getuserlist } from '@/api/user'
+    // import { getuserlist } from '@/api/user'
     export default {
         data() {
-            list: null
+
         },
         created:{
-            // this.fetchData()
         },
         methods: {
-            fetchData() {
-                // this.listLoading = true
-                getuserlist().then(response => {
-                    console.log(response)
-                    // this.list = response.data.items
-                    // this.listLoading = false
-                })
-            }
+
         }
     }
 </script>
