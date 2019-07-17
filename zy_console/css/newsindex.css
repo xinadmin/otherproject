@@ -23,11 +23,12 @@
 	padding-left: 0.6rem;
 	height: 2.8rem;
 	line-height: 2.8rem;
+	color:#8F8F94
 }
 
 .night {
 	font-size: 0.9rem;
-	color: red;
+	color: #e63521;
 }
 
 .side-nav li .span2 {
@@ -38,12 +39,12 @@
 }
 
 .select {
-	background-color: #f3f2f2;
+	background-color: #dbdbdb;
 	border-radius: 12%;
 	font-size: 0.8rem;
 	width: 4.5rem;
 	height: 1.5rem;
-	/* margin-top: 0.5rem; */
+	border: none;
 	margin-right: 1.3rem;
 }
 

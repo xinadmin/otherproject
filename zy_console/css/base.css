@@ -36,7 +36,11 @@ button {
 	margin: 0;
 	outline-style: none;
 }
- * { touch-action: pan-y; } 
+
+* {
+	touch-action: pan-y;
+}
+
 ul,
 ol {
 	list-style: none;
@@ -48,12 +52,15 @@ input {
 	padding-bottom: 0;
 	font-family: "SimSun", "宋体";
 }
+
 .mui-btn {
 	outline: none !important;
 }
+
 .mui-btn:active {
 	border: none !important;
 }
+
 select,
 input {
 	vertical-align: middle;
@@ -94,6 +101,7 @@ body {
 	height: 100%;
 	background: #F1F1F1;
 }
+
 .clearfix:before,
 .clearfix:after {
 	content: "";
@@ -113,10 +121,12 @@ a {
 	color: #000000;
 	text-decoration: none;
 }
+
 a:active {
-	color: #353535 ;
-	
+	color: #353535;
+
 }
+
 a:hover {
 	text-decoration: none;
 }
@@ -146,21 +156,27 @@ em {
 .col-orange {
 	color: #fc7f3d !important;
 }
+
 .col-gray {
 	color: #6f6f6f !important;
 }
+
 .col-qian-gray {
 	color: #737373 !important;
 }
+
 .col-black {
 	color: #010101 !important;
 }
+
 .col-meihong {
 	color: #c21554 !important;
 }
+
 .col-yellow {
 	color: yellow !important;
 }
+
 .col-lightbule {
 	color: #14c1ad;
 }
@@ -168,22 +184,28 @@ em {
 .col-blue {
 	color: #469bd4 !important;
 }
+
 .col-zong {
 	color: #bb9f93 !important;
 }
- .col-shenorange {
- color: #fe7621 !important;
- 	
- }
+
+.col-shenorange {
+	color: #fe7621 !important;
+
+}
+
 .col-zi {
 	color: #f840b1 !important;
 }
+
 .bg-wihte {
 	background: #fff;
 }
+
 .index_color_red {
 	color: #ff3300 !important;
 }
+
 /*公共类*/
 
 .w {
@@ -211,59 +233,64 @@ em {
 .ar {
 	text-align: right
 }
+
 .fengge {
 	width: 100%;
 	height: 10px;
 	background: #eeeeee;
 }
+
 .hide {
 	display: none
 }
+
 .fixed {
 	position: fixed;
 	top: 0;
 	z-index: 999;
 }
+
 .zui-bar-tab {
-				position: fixed;
-				left: 0;
-				bottom: 0;
-				display: table;
-				width: 100%;
-				height: 50px;
-				padding: 0;
-				table-layout: fixed;
-				border-top: 0;
-				border-bottom: 0;
-				background-color: #fff;
-			}
-			.zui-bar-tab .zui-tab-item {
-				display: table-cell;
-				overflow: hidden;
-				width: 1%;
-				height: 50px;
-				text-align: center;
-				vertical-align: middle;
-				white-space: nowrap;
-				text-overflow: ellipsis;
-				color: #929292;
-			}
+	position: fixed;
+	left: 0;
+	bottom: 0;
+	display: table;
+	width: 100%;
+	height: 50px;
+	padding: 0;
+	table-layout: fixed;
+	border-top: 0;
+	border-bottom: 0;
+	background-color: #fff;
+}
 
-			.zui-bar-tab .zui-tab-item .zui-icon {
-				top: 3px;
-				width: 24px;
-				height: 24px;
-				padding-top: 0;
-				padding-bottom: 0;
-			}
+.zui-bar-tab .zui-tab-item {
+	display: table-cell;
+	overflow: hidden;
+	width: 1%;
+	height: 50px;
+	text-align: center;
+	vertical-align: middle;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	color: #929292;
+}
 
-			.zui-bar-tab .zui-tab-item .zui-icon~.zui-tab-label {
-				font-size: 11px;
-				display: block;
-				overflow: hidden;
-				text-overflow: ellipsis;
-			}
+.zui-bar-tab .zui-tab-item .zui-icon {
+	top: 3px;
+	width: 24px;
+	height: 24px;
+	padding-top: 0;
+	padding-bottom: 0;
+}
 
-			.zui-bar-tab .zui-tab-item.zui-active {
-				color: #007aff;
-			}
+.zui-bar-tab .zui-tab-item .zui-icon~.zui-tab-label {
+	font-size: 11px;
+	display: block;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
+.zui-bar-tab .zui-tab-item.zui-active {
+	color: #007aff;
+}
