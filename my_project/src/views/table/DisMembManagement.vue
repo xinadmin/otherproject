@@ -1,32 +1,22 @@
 <template>
     <div class="contract-container">
         <el-row :gutter="24">
-            <el-col class="flex_center_between" :span="6">
-                <span class="select_title">贴子类型:</span>
-                <el-select v-model="status" placeholder="请选择类型" size="small">
-                    <el-option label="致富" value='5'></el-option>
-                    <el-option label="情感" value='1'></el-option>
-                    <el-option label="养生" value='3'></el-option>
-                    <el-option label="生活" value='4'></el-option>
-                    <el-option label="科技" value='2'></el-option>
-                </el-select>
+            <el-col class="flex_center_between" :span="5">
+                <span class="select_title">vip账号:</span>
+                <el-input placeholder="请输入vip账号" v-model="rentalSite"/>
             </el-col>
-            <el-col class="flex_center_between" :span="6">
-                <span class="select_title">标题:</span>
-                <el-input placeholder="请输入标题" v-model="rentalSite"/>
-            </el-col>
-            <el-col class="flex_center_between" :span="6">
-                <span class="select_title">发布人:</span>
-                <el-input placeholder="请输入发布人" v-model="lessee"/>
+            <el-col class="flex_center_between" :span="5">
+                <span class="select_title">昵称:</span>
+                <el-input placeholder="请输入昵称" v-model="lessee"/>
             </el-col>
             <el-col class="text_center" :span="4">
-                <el-button type="primary" size="mini" @click="handleSearch">查 询</el-button>
-                <el-button type="text" size="mini" @click="handleReset">重置</el-button>
+                <el-button type="primary" size="small" @click="handleSearch">查 询</el-button>
+                <el-button type="text" size="small" @click="handleReset">重置</el-button>
             </el-col>
         </el-row>
         <div class="create_box">
-            <router-link to="/tiezi/Fatie">
-                <el-button type="primary" size="mini">发帖</el-button>
+            <router-link to="/user/Usermessage">
+                <el-button type="primary" size="mini">添加</el-button>
             </router-link>
             <el-button type="primary" size="mini" @click="handleDelete">删除</el-button>
             <el-button type="primary" size="mini" @click="handleExport">导出</el-button>
@@ -39,25 +29,29 @@
                                      @change="handleChekck(scope.row.id,scope.row.checked)"></el-checkbox>
                     </template>
                 </el-table-column>
-                <el-table-column label="贴子类型" prop="status" align="center">
+                <el-table-column label="会员名" prop="subject"/>
+                <el-table-column label="会员类型" prop="status">
 
                     <template slot-scope="scope">
-                        <div v-if="scope.row.status==='1'" class="red">{{ scope.row.status }}</div>
-                        <div v-else>{{ scope.row.status }}</div>
+                        <div v-if="scope.row.status==='0'" >普通会员</div>
+                        <div v-else class="red">vip会员</div>
                     </template>
 
                 </el-table-column>
-                <el-table-column label="发布人" prop="subject"/>
-                <el-table-column label="标题" prop="subject"/>
-                <el-table-column label="是否付费" prop="subject">
-                    <template slot-scope="scope">
-                        <div v-if="scope.row.status==='1'" class="red">是</div>
-                        <div v-else>否</div>
-                    </template>
-                </el-table-column>
+                <el-table-column label="发布贴子数" prop="subject"/>
+                <el-table-column label="分红" prop="subject"/>
                 <el-table-column label="点赞数" prop="subject"/>
-                <el-table-column label="账户" prop="number"/>
-                <el-table-column label="发布时间" prop="signCreateTime" width="100px">
+                <el-table-column label="vip加入时间" prop="signCreateTime">
+                    <template slot-scope="scope">
+                        {{ scope.row.signCreateTime | formatDate1 }}
+                    </template>
+                </el-table-column>
+                <el-table-column label="vip到期时间" prop="signCreateTime">
+                    <template slot-scope="scope">
+                        {{ scope.row.signCreateTime | formatDate1 }}
+                    </template>
+                </el-table-column>
+                <el-table-column label="创建时间" prop="signCreateTime">
                     <template slot-scope="scope">
                         {{ scope.row.signCreateTime | formatDate1 }}
                     </template>
@@ -65,7 +59,7 @@
                 <el-table-column fixed="right" width="100px" align="center" label="操作">
                     <template slot-scope="scope">
                         <el-button type="text" size="mini" @click="toEdit(scope.row.id)">编辑</el-button>
-                        <el-button type="text" size="mini" @click="handleDelete(scope.row.id)">删除</el-button>
+                        <!--                        <el-button type="text" size="mini" @click="handleDelete(scope.row.id)">删除</el-button>-->
                         <el-button type="text" size="mini" @click="handleExport(scope.row.id)">详情</el-button>
                     </template>
                 </el-table-column>
@@ -124,6 +118,15 @@
             }
         },
         created() {
+            // this.getContractList();
+            // this.getStatusCount();
+        },
+        watch: {
+            doctorType(newVal, oldVal) {
+                if (newVal) {
+                    this.searchOne = this.searchForm.id = this.searchForm.number = "";
+                }
+            }
         },
         computed: {},
         methods: {
@@ -190,6 +193,7 @@
                 this.$set(this.searchForm, 'pageNum', 1);
                 this.getContractList()
             },
+            // 租金递增,即将到期列表
 
             // 租金递增列表
             coinSelect() {
@@ -288,19 +292,15 @@
                 this.searchForm.ids = []
                 this.getContractList()
             },
+
         }
     }
 </script>
 
 <style lang="scss" scoped>
-    .foneSel {
-        width: 130px;
-    }
-
     .el-input {
         width: 70%;
     }
-
     .contract-container {
         margin: 10px;
         padding: 17px;
